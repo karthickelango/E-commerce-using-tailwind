@@ -1,1 +1,1 @@
-# E-commerece-using-tailwind
+# E-commerce-using-tailwind
