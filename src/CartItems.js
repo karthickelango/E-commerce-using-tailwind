@@ -34,7 +34,38 @@ const CartItems = () => {
           imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-04.jpg',
           imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
         },
-        // More products...
+        {
+            id: 5,
+            name: 'Machined Mechanical Pencil',
+            href: '#',
+            price: '$35',
+            imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-05.jpg',
+            imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
+          },
+          {
+            id: 6,
+            name: 'Machined Mechanical Pencil',
+            href: '#',
+            price: '$35',
+            imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-06.jpg',
+            imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
+          },
+          {
+            id: 7,
+            name: 'Machined Mechanical Pencil',
+            href: '#',
+            price: '$35',
+            imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-07.jpg',
+            imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
+          },
+          {
+            id: 8,
+            name: 'Machined Mechanical Pencil',
+            href: '#',
+            price: '$35',
+            imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-08.jpg',
+            imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
+          },
       ]
   return (
     <div className="bg-white">

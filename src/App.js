@@ -14,6 +14,7 @@ function App() {
         <Navbar></Navbar>
         <Routes>
           <Route path='/' element={<Home />}></Route>
+          <Route path='cartdes' element={<CartItems />}></Route>
           <Route path='cart' element={<Cart />}></Route>
         </Routes>
       </DataProvider>

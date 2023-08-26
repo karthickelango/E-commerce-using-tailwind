@@ -17,21 +17,21 @@ export const DataProvider = ({children}) => {
       navigate('/cart')
     }
     // product page
-    useEffect(() => {
-      const fetchItems = async() => {
-        try {
-          const response = await api.get('products');
-          setProducts(response.data)
-        } catch(err) {
-          console.log(err)
-        }finally {
-          setIsLoading(false)
-        }
-      }
-      setTimeout(() => {
-        (async() => fetchItems())()
-      }, 3000)
-    })
+    // useEffect(() => {
+    //   const fetchItems = async() => {
+    //     try {
+    //       const response = await api.get('products');
+    //       setProducts(response.data)
+    //     } catch(err) {
+    //       console.log(err)
+    //     }finally {
+    //       setIsLoading(false)
+    //     }
+    //   }
+    //   setTimeout(() => {
+    //     (async() => fetchItems())()
+    //   }, 3000)
+    // })
 
  return (
     <DataContext.Provider value={{
