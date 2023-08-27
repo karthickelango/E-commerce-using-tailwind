@@ -11,10 +11,11 @@ const Cart = () => {
           const removeItem = (id) => {
             dispatch(remove(id))
           }
-    // const {id} = useParams
-    // const product = products.find(product => (product.id).toString() === id)    
   return (
-    <main>
+    <main className='mt-150'>
+      <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+      <div class="bars"></div>
+
         { products.length > 0 ?
         <div>
         {products.map(product => (
@@ -34,6 +35,7 @@ const Cart = () => {
             </Link>
         </div>     
         }
+        </div>
     </main>
     
   )

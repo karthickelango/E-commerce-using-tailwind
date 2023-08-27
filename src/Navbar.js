@@ -127,8 +127,8 @@ function classNames(...classes) {
       },
     ],
     pages: [
-      { name: 'Company', href: '#' },
-      { name: 'Stores', href: '#' },
+      { name: 'Company', href: 'company' },
+      { name: 'Stores', href: 'previewpage' },
     ],
   }
 
@@ -136,7 +136,7 @@ const Navbar = () => {
 const [open, setOpen] = useState(false)
 const cartProduct = useSelector(state => state.cart)
 return (
-    <div className="bg-white">
+    <div className="bg-white fixed-position">
     {/* Mobile menu */}
     <Transition.Root show={open} as={Fragment}>
       <Dialog as="div" className="relative z-40 lg:hidden" onClose={setOpen}>
@@ -396,13 +396,13 @@ return (
                 ))}
 
                 {navigation.pages.map((page) => (
-                  <a
+                  <Link
                     key={page.name}
-                    href={page.href}
+                    to={page.href}
                     className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
                   >
                     {page.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </Popover.Group>
@@ -446,7 +446,7 @@ return (
                                          aria-hidden="true"
                         />
                     </Link>
-                  <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">{cartProduct.length > 0 ? <span className='animate-count'>{cartProduct.length}</span> : '0'}</span>
+                  <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">{cartProduct.length > 0 ? <span className='animate-count'>{cartProduct.length}</span> : <span className='animate-count-empty'>0</span>}</span>
                   <span className="sr-only">items in cart, view bag</span>
                 </a>
               </div>

@@ -4,6 +4,7 @@ import persistReducer from "redux-persist/es/persistReducer";
 import persistStore from "redux-persist/es/persistStore";
 import storage from 'redux-persist/lib/storage'
 import cartSlice from "./cartSlice";
+import previewSlice from "./previewSlice";
 
 const persistConfig = {
     key: 'root',
@@ -11,7 +12,8 @@ const persistConfig = {
   }
 
   const rootReducer = combineReducers({ 
-    cart: cartSlice
+    cart: cartSlice,
+    previewpage: previewSlice
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
