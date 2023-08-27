@@ -7,8 +7,8 @@ import PreviewPage from './PreviewPage'
 import { openPreview } from './store/previewSlice'
 
 const Home = () => {
-        // const {products, isLoading} = useContext(DataContext)
-
+        const {isLoading} = useContext(DataContext)
+  
         const products = [
             {
               id: 1,
@@ -84,7 +84,16 @@ const Home = () => {
           }
           const{setOpen} = useContext(DataContext)
   return (
-    <div className="bg-white mt-150">
+    <main>
+    { !isLoading && 
+      <div className='alignCenter'>
+          <div class="bars"></div>
+      </div>
+    }
+    {
+      isLoading &&
+      <>
+     <div className="bg-white mt-150">
       <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         <h2 className="sr-only">Products</h2>
 
@@ -94,7 +103,7 @@ const Home = () => {
               <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg  xl:aspect-h-8 xl:aspect-w-7 position-relative">
                 <img
                   src={product.imageSrc}
-                  className="h-full w-full res-image object-center group-hover:opacity-75"
+                  className="h-full w-full res-image object-center"
                 />
                 <span className='quick-view bg-opacity-75'>Quick View</span>
               </div>
@@ -106,6 +115,9 @@ const Home = () => {
       </div>
       <PreviewPage></PreviewPage>
     </div>
+    </>
+    }
+    </main>
   )
 }
 

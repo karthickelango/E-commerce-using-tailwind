@@ -32,6 +32,9 @@ code {
    background-size: 7.2px 100%;
    background-repeat: no-repeat;
    animation: bars-t0lx83sm 1s infinite linear;
+   position: absolute;
+   top: 50%;
+   left: 50%;
 }
 
 @keyframes bars-t0lx83sm {
