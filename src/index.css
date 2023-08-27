@@ -73,3 +73,24 @@ code {
   background-color: #e5e7eb;
   color: #000;
 }
+.position-relative {
+  position: relative;
+}
+.position-relative:hover .quick-view {
+  opacity: .75;
+  transition: opacity .75s ease;
+}
+.quick-view {
+  opacity: 0;
+  position: absolute;
+  bottom: 25px;
+  color: #000;
+  width: 100%;
+  text-align: center;
+  width: 85%;
+  background-color: white;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
