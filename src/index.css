@@ -97,3 +97,15 @@ code {
   border-radius: 4px;
   cursor: pointer;
 }
+.border-1 {
+  border: 1px solid #e2e8f0;
+}
+.mb-40 {
+  margin-bottom: 40px;
+}
+.p-20 {
+  padding: 20px;
+}
+.br-5 {
+  border-radius: 5px;
+}
