@@ -109,3 +109,38 @@ code {
 .br-5 {
   border-radius: 5px;
 }
+.d-f-j {
+  display: flex;
+  justify-content: space-between;
+}
+.p-3 {
+  padding: 15px 20px;
+}
+.sticky-card {
+  position: sticky;
+  top: 64px;
+}
+.color-secondary {
+  color: #757575;
+}
+.br-1 {
+  border-bottom: 1px solid #e2e8f0;
+}
+.divider-dashed {
+  border-top: 1px dashed #e2e8f0;
+  width: 90%;
+  margin: 0 auto;
+}
+.text-color-green {
+  color: #4f46e5;
+}
+.fw-700 {
+  font-weight: 700;
+}
+.d-f-c {
+  display: flex;
+  justify-content: center;
+} 
+.fw-400 {
+  font-weight: 400;
+}

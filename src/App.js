@@ -6,8 +6,7 @@ import CartItems from './CartItems';
 import Cart from './Cart';
 import Home from './Home';
 import { DataProvider } from './context/DataContext';
-import Company from './Company';
-import PreviewPage from './PreviewPage';
+import StorePage from './StorePage';
 
 function App() {
   return (
@@ -16,8 +15,7 @@ function App() {
         <Navbar></Navbar>
         <Routes>
           <Route path='/' element={<Home />}></Route>
-          <Route path='company' element={<Company />}></Route>
-          <Route path='previewpage' element={<PreviewPage />}></Route>
+          <Route path='Stores' element={<StorePage />}></Route>
           <Route path='cartdes' element={<CartItems />}></Route>
           <Route path='cart' element={<Cart />}></Route>
         </Routes>

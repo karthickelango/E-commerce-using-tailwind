@@ -38,33 +38,18 @@ export const DataProvider = ({children}) => {
     const navigate = useNavigate()
     const [reqType, setreqType] = useState('')
     const [open, setOpen] = useState(false)
+    const [openSignin, setOpenSignIn] = useState(false)
     const [selectedColor, setSelectedColor] = useState(productDetails.colors[0])
     const [selectedSize, setSelectedSize] = useState(productDetails.sizes[2])
 
     const handelNavigate = (e) => {
       navigate('/cart')
     }
-    // product page
-    // useEffect(() => {
-    //   const fetchItems = async() => {
-    //     try {
-    //       const response = await api.get('products');
-    //       setProducts(response.data)
-    //     } catch(err) {
-    //       console.log(err)
-    //     }finally {
-    //       setIsLoading(false)
-    //     }
-    //   }
-    //   setTimeout(() => {
-    //     (async() => fetchItems())()
-    //   }, 3000)
-    // })
-
+    
  return (
     <DataContext.Provider value={{
         products, isLoading, setIsLoading, handelNavigate,reqType, setreqType, categories, setCategories, open, setOpen, selectedColor,
-        setSelectedColor, selectedSize, setSelectedSize, productDetails
+        setSelectedColor, selectedSize, setSelectedSize, productDetails, setOpenSignIn, openSignin
     }}>
         {children}
     </DataContext.Provider>

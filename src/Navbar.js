@@ -4,6 +4,8 @@ import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon } from '@her
 import { useState, Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import { useContext } from 'react'
+import DataContext from './context/DataContext'
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -127,14 +129,14 @@ function classNames(...classes) {
       },
     ],
     pages: [
-      { name: 'Company', href: 'company' },
-      { name: 'Stores', href: 'previewpage' },
+      { name: 'Stores', href: 'Stores' },
     ],
   }
 
 const Navbar = () => {
 const [open, setOpen] = useState(false)
 const cartProduct = useSelector(state => state.cart)
+const { setOpenSignIn, openSignin} = useContext(DataContext)
 return (
     <div className="bg-white fixed-position">
     {/* Mobile menu */}
@@ -409,13 +411,10 @@ return (
 
             <div className="ml-auto flex items-center">
               <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                <a href="#" className="text-sm font-medium text-gray-700 hover:text-gray-800">
+                <a className="text-sm font-medium text-gray-700 hover:text-gray-800"  onClick={() => setOpenSignIn(true)}>
                   Sign in
                 </a>
                 <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
-                <a href="#" className="text-sm font-medium text-gray-700 hover:text-gray-800">
-                  Create account
-                </a>
               </div>
 
               {/* <div className="hidden lg:ml-8 lg:flex">

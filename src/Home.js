@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import PreviewPage from './PreviewPage'
 import { openPreview } from './store/previewSlice'
+import LoginForm from './LoginForm'
 
 const Home = () => {
         const {isLoading} = useContext(DataContext)
@@ -14,7 +15,7 @@ const Home = () => {
               id: 1,
               name: 'Earthen Bottle',
               href: '#',
-              price: '$48',
+              price: '48',
               imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-01.jpg',
               imageAlt: 'Tall slender porcelain bottle with natural clay textured body and cork stopper.',
               
@@ -23,7 +24,7 @@ const Home = () => {
               id: 2,
               name: 'Nomad Tumbler',
               href: '#',
-              price: '$35',
+              price: '35',
               imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-02.jpg',
               imageAlt: 'Olive drab green insulated bottle with flared screw lid and flat top.',
             },
@@ -31,7 +32,7 @@ const Home = () => {
               id: 3,
               name: 'Focus Paper Refill',
               href: '#',
-              price: '$89',
+              price: '89',
               imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-03.jpg',
               imageAlt: 'Person using a pen to cross a task off a productivity paper card.',
             },
@@ -39,7 +40,7 @@ const Home = () => {
               id: 4,
               name: 'Machined Mechanical Pencil',
               href: '#',
-              price: '$35',
+              price: '35',
               imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-04.jpg',
               imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
             },
@@ -47,7 +48,7 @@ const Home = () => {
                 id: 5,
                 name: 'Machined Mechanical Pencil',
                 href: '#',
-                price: '$35',
+                price: '35',
                 imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-05.jpg',
                 imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
               },
@@ -55,7 +56,7 @@ const Home = () => {
                 id: 6,
                 name: 'Machined Mechanical Pencil',
                 href: '#',
-                price: '$35',
+                price: '35',
                 imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-06.jpg',
                 imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
               },
@@ -63,7 +64,7 @@ const Home = () => {
                 id: 7,
                 name: 'Machined Mechanical Pencil',
                 href: '#',
-                price: '$35',
+                price: '35',
                 imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-07.jpg',
                 imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
               },
@@ -71,7 +72,7 @@ const Home = () => {
                 id: 8,
                 name: 'Machined Mechanical Pencil',
                 href: '#',
-                price: '$35',
+                price: '35',
                 imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-03.jpg',
                 imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
               },
@@ -108,12 +109,13 @@ const Home = () => {
                 <span className='quick-view bg-opacity-75'>Quick View</span>
               </div>
               <h3 className="mt-4 text-sm text-gray-700 text-center">{product.name}</h3>
-              <p className="mt-1 text-lg font-medium text-gray-900 text-center">{product.price}</p>
+              <p className="mt-1 text-lg font-medium text-gray-900 text-center">$ {product.price}</p>
             </div>
           ))}
         </div>
       </div>
       <PreviewPage></PreviewPage>
+      <LoginForm></LoginForm>
     </div>
     </>
     }
