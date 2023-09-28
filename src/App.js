@@ -7,6 +7,7 @@ import Cart from './Cart';
 import Home from './Home';
 import { DataProvider } from './context/DataContext';
 import StorePage from './StorePage';
+import EmptyItem from './EmptyItem';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path='Stores' element={<StorePage />}></Route>
+          <Route path='noitem' element={<EmptyItem />}></Route>
           <Route path='cartdes' element={<CartItems />}></Route>
           <Route path='cart' element={<Cart />}></Route>
         </Routes>
