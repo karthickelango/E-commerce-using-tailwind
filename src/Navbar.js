@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux'
 import { useContext } from 'react'
 import DataContext from './context/DataContext'
 import Logo from './assets/logo.png'
+import LoginForm from './LoginForm'
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -139,6 +140,7 @@ const [open, setOpen] = useState(false)
 const cartProduct = useSelector(state => state.cart)
 const { setOpenSignIn, openSignin} = useContext(DataContext)
 return (
+  <>
     <div className="bg-white fixed-position">
     {/* Mobile menu */}
     <Transition.Root show={open} as={Fragment}>
@@ -456,6 +458,9 @@ return (
       </nav>
     </header>
   </div>
+        <LoginForm></LoginForm>
+        </>
+
   )
 }
 

@@ -115,7 +115,6 @@ const Home = () => {
         </div>
       </div>
       <PreviewPage></PreviewPage>
-      <LoginForm></LoginForm>
     </div>
     </>
     }
