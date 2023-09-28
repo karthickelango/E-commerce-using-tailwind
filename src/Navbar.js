@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useContext } from 'react'
 import DataContext from './context/DataContext'
+import Logo from './assets/logo.png'
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -303,8 +304,8 @@ return (
               <Link to='/'>
                 <img
                   className="h-8 w-auto"
-                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                  alt=""
+                  src={Logo}
+                  alt="Shopkart"
                 />
               </Link>
             </div>
