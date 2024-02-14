@@ -41,35 +41,12 @@ const Cart = () => {
                   </div>
                 </div>
                 <div class="flex items-baseline mt-4 mb-6 pb-6 border-b border-slate-200">
-                  <div class="space-x-2 flex text-sm">
+                  <div class="space-x-2 flex text-sm" style={{alignItems: "baseline"}}>
+                    <p className='w-9 h-9'>Size:</p>
                     <label>
-                      <input class="sr-only peer" name="size" type="radio" value="xs" />
-                      <div class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white">
-                        XS
-                      </div>
-                    </label>
-                    <label>
-                      <input class="sr-only peer" name="size" type="radio" value="s" checked />
+                      <input class="sr-only peer" name="size" type="radio" value="xs" checked />
                       <div class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white">
                         S
-                      </div>
-                    </label>
-                    <label>
-                      <input class="sr-only peer" name="size" type="radio" value="m" />
-                      <div class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white">
-                        M
-                      </div>
-                    </label>
-                    <label>
-                      <input class="sr-only peer" name="size" type="radio" value="l" />
-                      <div class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white">
-                        L
-                      </div>
-                    </label>
-                    <label>
-                      <input class="sr-only peer" name="size" type="radio" value="xl" />
-                      <div class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white">
-                        XL
                       </div>
                     </label>
                   </div>
