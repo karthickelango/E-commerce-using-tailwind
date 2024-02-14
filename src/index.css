@@ -144,3 +144,8 @@ code {
 .fw-400 {
   font-weight: 400;
 }
+.footer-brand {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}

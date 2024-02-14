@@ -8,19 +8,23 @@ import Home from './Home';
 import { DataProvider } from './context/DataContext';
 import StorePage from './StorePage';
 import EmptyItem from './EmptyItem';
+import Footer from './Footer';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
       <DataProvider>
-        <Navbar></Navbar>
-        <Routes>
-          <Route path='/' element={<Home />}></Route>
-          <Route path='Stores' element={<StorePage />}></Route>
-          <Route path='noitem' element={<EmptyItem />}></Route>
-          <Route path='cartdes' element={<CartItems />}></Route>
-          <Route path='cart' element={<Cart />}></Route>
-        </Routes>
+        <div>
+          <Navbar></Navbar>
+          <Routes>
+            <Route path='/' element={<Home />}></Route>
+            <Route path='Stores' element={<StorePage />}></Route>
+            <Route path='noitem' element={<EmptyItem />}></Route>
+            <Route path='cartdes' element={<CartItems />}></Route>
+            <Route path='cart' element={<Cart />}></Route>
+          </Routes>
+        </div>
+        <Footer />
       </DataProvider>
     </div>
   );
