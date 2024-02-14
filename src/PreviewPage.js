@@ -104,7 +104,7 @@ const PreviewPage = () => {
                                 productDetails.map(product => (
                                 <>
                                     <h2 className="text-2xl font-bold text-gray-900 sm:pr-12">{product.name}</h2>
-                                    <p className="text-2xl text-gray-900">$ {product.price}</p>
+                                    <p className="text-2xl text-gray-900">₹ {product.price}</p>
                                 </>
                             ))}
                             <section aria-labelledby="information-heading" className="mt-2">

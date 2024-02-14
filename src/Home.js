@@ -109,7 +109,7 @@ const Home = () => {
                 <span className='quick-view bg-opacity-75'>Quick View</span>
               </div>
               <h3 className="mt-4 text-sm text-gray-700 text-center">{product.name}</h3>
-              <p className="mt-1 text-lg font-medium text-gray-900 text-center">$ {product.price}</p>
+              <p className="mt-1 text-lg font-medium text-gray-900 text-center">₹ {product.price}</p>
             </div>
           ))}
         </div>

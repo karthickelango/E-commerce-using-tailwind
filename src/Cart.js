@@ -34,7 +34,7 @@ const Cart = () => {
                     {product.name}
                   </h1>
                   <div class="text-lg font-semibold text-slate-500">
-                    $ {product.price}
+                  ₹ {product.price}
                   </div>
                   <div class="w-full flex-none text-sm font-medium text-slate-700 mt-2">
                     In stock
@@ -91,17 +91,17 @@ const Cart = () => {
           <div className='card font-sans border-1 mb-40 br-5'>
               <h5 className='br-1 p-3 text-start mt-0 color-secondary'>Price details</h5>
             <div className='p-3 d-f-j'>
-              Price of ({products.length} items): <span className='text-end'>$ {totalValue}</span>
+              Price of ({products.length} items): <span className='text-end'>₹ {totalValue}</span>
             </div>
             <div className='p-3 d-f-j'>
-            Discount: <span className='text-color-green'>$ 0</span>
+            Discount: <span className='text-color-green'>₹ 0</span>
             </div>
             <div className='p-3 d-f-j'>
               Delivery Charges: <span className='text-color-green'>Free</span>
             </div>
             <div className='divider-dashed'></div>
             <div className='p-3 d-f-j fw-700'>
-                Total value: <span>$ {totalValue}</span>
+                Total value: <span>₹ {totalValue}</span>
             </div>
             <div className='divider-dashed'></div>
             <div className='p-3 d-f-j fw-700'>
