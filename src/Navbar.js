@@ -137,8 +137,7 @@ function classNames(...classes) {
 
 const Navbar = () => {
 const [open, setOpen] = useState(false)
-const cartProduct = useSelector(state => state.cart)
-const { setOpenSignIn, openSignin} = useContext(DataContext)
+const { setOpenSignIn, openSignin, items} = useContext(DataContext)
 return (
   <>
     <div className="bg-white fixed-position">
@@ -448,7 +447,7 @@ return (
                                          aria-hidden="true"
                         />
                     </Link>
-                  <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">{cartProduct.length > 0 ? <span className='animate-count'>{cartProduct.length}</span> : <span className='animate-count-empty'>0</span>}</span>
+                  <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">{items.length > 0 ? <span className='animate-count'>{items.length}</span> : <span className='animate-count-empty'>0</span>}</span>
                   <span className="sr-only">items in cart, view bag</span>
                 </a>
               </div>

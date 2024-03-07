@@ -39,8 +39,9 @@ export const DataProvider = ({children}) => {
     const [reqType, setreqType] = useState('')
     const [open, setOpen] = useState(false)
     const [openSignin, setOpenSignIn] = useState(false)
-    const [selectedColor, setSelectedColor] = useState('')
-    const [selectedSize, setSelectedSize] = useState('')
+    const [selectedColor, setSelectedColor] = useState('White')
+    const [selectedSize, setSelectedSize] = useState('M')
+    const [items, setItems] = useState([])
 
     const handelNavigate = (e) => {
       navigate('/cart')
@@ -49,7 +50,7 @@ export const DataProvider = ({children}) => {
  return (
     <DataContext.Provider value={{
         products, isLoading, setIsLoading, handelNavigate,reqType, setreqType, categories, setCategories, open, setOpen, selectedColor,
-        setSelectedColor, selectedSize, setSelectedSize, setOpenSignIn, openSignin
+        setSelectedColor, selectedSize, setSelectedSize, setOpenSignIn, openSignin, items, setItems
     }}>
         {children}
     </DataContext.Provider>
