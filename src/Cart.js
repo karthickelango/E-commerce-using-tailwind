@@ -1,9 +1,7 @@
-import React, { useContext } from 'react'
-import { useSelector } from 'react-redux';
+import React, { useContext, useEffect } from 'react'
 import { remove } from './store/cartSlice';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import Loader from './empty-cart.gif'
 import DataContext from './context/DataContext';
 
 const Cart = () => {
@@ -14,60 +12,60 @@ const Cart = () => {
   const totalValue = items.reduce((sum, item) => sum += item.price * item.quantity, 0)
 
   const removeItem = (id) => {
-    dispatch(remove(id))
+    console.log(id)
+      items.splice(id, 1);
   }
-  console.log(items)
   return (
     <main className='mt-150'>
       {items.length > 0 ?
         <div className='flex mx-auto max-w-7xl'>
           <div className="w-3/5 px-4 sm:px-6  lg:px-8 ">
-            {items.map(product => (
+            {items.map((product, index) => (
               <>
-                <div class="flex font-sans border-1 mb-40 p-20 br-5">
-                  <div class="flex-none w-48 relative">
-                    <img src={product.image} id={product.id} class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+                <div className="flex font-sans border-1 mb-40 p-20 br-5" key={index}>
+                  <div className="flex-none w-48 relative">
+                    <img src={product.image} id={product.id} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
                   </div>
-                  <form class="flex-auto p-6">
-                    <div class="flex flex-wrap">
-                      <h1 class="flex-auto text-lg font-semibold text-slate-900">
+                  <form className="flex-auto p-6">
+                    <div className="flex flex-wrap">
+                      <h1 className="flex-auto text-lg font-semibold text-slate-900">
                         {product.name}
                       </h1>
-                      <div class="text-lg font-semibold text-slate-500">
+                      <div className="text-lg font-semibold text-slate-500">
                         ₹ {product.price}
                       </div>
                     </div>
-                    <div class="flex items-baseline mt-4 mb-6 pb-6 border-b border-slate-200">
-                      <div class="space-x-2 flex text-sm" style={{ alignItems: "baseline" }}>
+                    <div className="flex items-baseline mt-4 mb-6 pb-6 border-b border-slate-200">
+                      <div className="space-x-2 flex text-sm" style={{ alignItems: "baseline" }}>
                         <p className='w-9 h-9'>Size:</p>
                         <label>
-                          <input class="sr-only peer" name="size" type="radio" value="xs" checked />
-                          <div class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white">
+                          <input className="sr-only peer" name="size" type="radio" value="xs" checked />
+                          <div className="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white">
                             {product.size}
                           </div>
                         </label>
                       </div>
-                      <div class="space-x-2 flex text-sm" style={{ alignItems: "baseline" }}>
+                      <div className="space-x-2 flex text-sm" style={{ alignItems: "baseline" }}>
                         <p className='ms-5 w-9 h-9'>Color:</p>
                         <label>
-                          <div class="w-9 h-9 rounded-lg flex items-center justify-center font-semibold text-slate-900">
+                          <div className="w-9 h-9 rounded-lg flex items-center justify-center font-semibold text-slate-900">
                             {product.color}
                           </div>
                         </label>
                       </div>
-                      <div class="space-x-2 flex text-sm" style={{ alignItems: "baseline" }}>
+                      <div className="space-x-2 flex text-sm" style={{ alignItems: "baseline" }}>
                         <p className='ms-5 w-9 h-9'>Quantity:</p>
                         <label>
-                          <div class="w-9 h-9 rounded-lg flex items-center justify-center font-semibold text-slate-900">
+                          <div className="w-9 h-9 rounded-lg flex items-center justify-center font-semibold text-slate-900">
                             {product.quantity}
                           </div>
                         </label>
                       </div>
                     </div>
-                    <div class="flex space-x-4 mb-6 text-sm font-medium">
-                      <div class="flex-auto flex space-x-4">
-                        <button class="h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-900" type="button"
-                          onClick={() => removeItem(product.id)}>
+                    <div className="flex space-x-4 mb-6 text-sm font-medium">
+                      <div className="flex-auto flex space-x-4">
+                        <button className="h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-900" type="button"
+                          onClick={() => removeItem(index)}>
                           Remove from bag
                         </button>
                       </div>

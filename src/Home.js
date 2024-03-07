@@ -121,8 +121,8 @@ const Home = () => {
               <h2 className="sr-only">Products</h2>
 
               <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8" onClick={() => setOpen(true)}>
-                {products.map((product) => (
-                  <div id={product.id} className="group" onClick={() => addToPreview(product)}>
+                {products.map((product, index) => (
+                  <div id={product.id} className="group" onClick={() => addToPreview(product)} key={index}>
                     <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg  xl:aspect-h-8 xl:aspect-w-7 position-relative">
                       <img
                         src={product.imageSrc}
