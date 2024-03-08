@@ -22,7 +22,8 @@ const PreviewPage = () => {
         setSelectedColor, selectedSize, setSelectedSize, addToCart } = useContext(DataContext)
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    const closeModel = () => {
+    const closeModel = (product) => {
+        dispatch(removeItem(product.id))
         setOpen(false)
     }
     const getSize = (s) => {
@@ -44,7 +45,7 @@ const PreviewPage = () => {
     return (
         <main className='mt-150'>
             <Transition.Root show={open} as={Fragment}>
-                <Dialog as="div" className="relative z-10" onClose={setOpen}>
+                <Dialog as="div" className="relative z-10" onClose={() => null} >
                     <Transition.Child
                         as={Fragment}
                         enter="ease-out duration-300"
