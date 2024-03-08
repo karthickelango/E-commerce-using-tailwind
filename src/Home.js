@@ -110,7 +110,7 @@ const Home = () => {
     <main>
       {!isLoading &&
         <div className='alignCenter'>
-          <div class="bars"></div>
+          <div className="bars"></div>
         </div>
       }
       {
