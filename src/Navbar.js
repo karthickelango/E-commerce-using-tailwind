@@ -138,12 +138,14 @@ function classNames(...classes) {
 const Navbar = () => {
 const [open, setOpen] = useState(false)
 const { setOpenSignIn, openSignin, items} = useContext(DataContext)
+const closeDropDown = () => {
+}
 return (
   <>
     <div className="bg-white fixed-position">
     {/* Mobile menu */}
     <Transition.Root show={open} as={Fragment}>
-      <Dialog as="div" className="relative z-40 lg:hidden" onClose={setOpen}>
+      <Dialog as="div" className="relative z-40 lg:hidden" onClose={() => null}>
         <Transition.Child
           as={Fragment}
           enter="transition-opacity ease-linear duration-300"
@@ -340,7 +342,7 @@ return (
                           leaveFrom="opacity-100"
                           leaveTo="opacity-0"
                         >
-                          <Popover.Panel className="absolute inset-x-0 top-full text-sm text-gray-500">
+                          <Popover.Panel className="absolute inset-x-0 top-full text-sm text-gray-500 custom-popover">
                             {/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
                             <div className="absolute inset-0 top-1/2 bg-white shadow" aria-hidden="true" />
 
@@ -379,10 +381,10 @@ return (
                                           className="mt-6 space-y-6 sm:mt-4 sm:space-y-4"
                                         >
                                           {section.items.map((item) => (
-                                            <li key={item.name} className="flex">
-                                              <a href={item.href} className="hover:text-gray-800">
+                                            <li key={item.name} className="flex hi" onClick={() => closeDropDown()}>
+                                              <Link to={item.href} className="hover:text-gray-800">
                                                 {item.name}
-                                              </a>
+                                              </Link>
                                             </li>
                                           ))}
                                         </ul>
