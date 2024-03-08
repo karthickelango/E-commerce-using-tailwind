@@ -308,7 +308,7 @@ return (
                 <img
                   className="h-8 w-auto"
                   src={Logo}
-                  alt="Shopkart"
+                  alt="Angaddi"
                 />
               </Link>
             </div>

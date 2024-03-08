@@ -30,61 +30,61 @@ const Home = () => {
   const products = [
     {
       id: 1,
-      name: 'Earthen Bottle',
+      name: 'Women Jacket Black',
       href: '#',
-      price: '480',
+      price: '890',
       imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-01.jpg',
       imageAlt: 'Tall slender porcelain bottle with natural clay textured body and cork stopper.',
       productcolor
     },
     {
       id: 2,
-      name: 'Nomad Tumbler',
+      name: 'Men t-shirt',
       href: '#',
-      price: '350',
+      price: '370',
       imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-02.jpg',
       imageAlt: 'Olive drab green insulated bottle with flared screw lid and flat top.',
       productcolor
     },
     {
       id: 3,
-      name: 'Focus Paper Refill',
+      name: 'Men t-shirt Gray',
       href: '#',
-      price: '890',
+      price: '480',
       imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-03.jpg',
       imageAlt: 'Person using a pen to cross a task off a productivity paper card.',
       productcolor
     },
     {
       id: 4,
-      name: 'Machined Mechanical Pencil',
+      name: 'Women Jacket Blue',
       href: '#',
-      price: '350',
+      price: '890',
       imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-04.jpg',
       imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
       productcolor
     },
     {
       id: 5,
-      name: 'Machined Mechanical Pencil',
+      name: 'Men t-shirt White',
       href: '#',
-      price: '350',
+      price: '420',
       imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-05.jpg',
       imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
       productcolor
     },
     {
       id: 6,
-      name: 'Machined Mechanical Pencil',
+      name: 'Women t-shirt Pink',
       href: '#',
-      price: '350',
+      price: '500',
       imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-06.jpg',
       imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
       productcolor
     },
     {
       id: 7,
-      name: 'Machined Mechanical Pencil',
+      name: 'Men t-shirt White',
       href: '#',
       price: '350',
       imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-07.jpg',
@@ -93,9 +93,9 @@ const Home = () => {
     },
     {
       id: 8,
-      name: 'Machined Mechanical Pencil',
+      name: 'Men t-shirt Gray',
       href: '#',
-      price: '350',
+      price: '300',
       imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-03.jpg',
       imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
       productcolor
