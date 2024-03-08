@@ -4,16 +4,15 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import DataContext from './context/DataContext';
 
-const Cart = () => {
-  const { items } = useContext(DataContext)
 
-  const dispatch = useDispatch()
+const Cart = () => {
+  const { items, setItems, updateQuantity } = useContext(DataContext)
 
   const totalValue = items.reduce((sum, item) => sum += item.price * item.quantity, 0)
-
-  const removeItem = (id) => {
-    console.log(id)
-      items.splice(id, 1);
+  // remove item 
+  const removeItem = (itemId) => {
+    const updatedCart = items.filter(item => item.id !== itemId);
+    setItems(updatedCart);
   }
   return (
     <main className='mt-150'>
@@ -54,18 +53,17 @@ const Cart = () => {
                         </label>
                       </div>
                       <div className="space-x-2 flex text-sm" style={{ alignItems: "baseline" }}>
-                        <p className='ms-5 w-9 h-9'>Quantity:</p>
+                        <span className='quantity-btn ms-5' onClick={() => updateQuantity(product.id, product.color, -1)}>-</span>
+                        <p className='ms-5'>Quantity: <span className='font-semibold text-slate-900'>{product.quantity}</span></p>
+                        <span className='quantity-btn' onClick={() => updateQuantity(product.id, product.color, +1)}>+</span>
                         <label>
-                          <div className="w-9 h-9 rounded-lg flex items-center justify-center font-semibold text-slate-900">
-                            {product.quantity}
-                          </div>
                         </label>
                       </div>
                     </div>
                     <div className="flex space-x-4 mb-6 text-sm font-medium">
                       <div className="flex-auto flex space-x-4">
                         <button className="h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-900" type="button"
-                          onClick={() => removeItem(index)}>
+                          onClick={() => removeItem(product.id)}>
                           Remove from bag
                         </button>
                       </div>

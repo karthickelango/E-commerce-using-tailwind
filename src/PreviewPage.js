@@ -9,6 +9,7 @@ import { add } from './store/cartSlice'
 import { useDispatch } from 'react-redux'
 import { removeItem } from './store/previewSlice'
 import product from './api/product'
+import { useNavigate } from 'react-router-dom'
 
 
 function classNames(...classes) {
@@ -18,35 +19,10 @@ function classNames(...classes) {
 const PreviewPage = () => {
     const productDetails = useSelector(state => state.previewpage)
     const { open, setOpen, selectedColor,
-        setSelectedColor, selectedSize, setSelectedSize, items, setItems } = useContext(DataContext)
+        setSelectedColor, selectedSize, setSelectedSize, addToCart } = useContext(DataContext)
+    const navigate = useNavigate()
     const dispatch = useDispatch()
-    const addToCart = (product) => {
-        const existingItem = items.find(item => item.id === product.id && item.size === selectedSize && item.color === selectedColor)  
-        console.log(existingItem)
-        if (existingItem) {
-            updateQuantity(existingItem.id,existingItem.color, 1)
-            setOpen(false)
-            return
-        }
-        const newItem = {
-            id: product.id,
-            name: product.name,
-            price: product.price,
-            image: product.imageSrc,
-            size: selectedSize,
-            color: selectedColor,
-            quantity: 1
-        }
-        setItems([newItem, ...items])
-        dispatch(removeItem(product.id))
-        setOpen(false)
-    }
-    // update quantity 
-    const updateQuantity = (itemId, colorId, amount) => {
-        setItems(items.map((item) => item.id === itemId && item.color === colorId ? {...item, quantity: item.quantity + amount} : item).filter(item => item.quantity > 0))
-    }
-    const closeModel = (product) => {
-        dispatch(removeItem(product.id))
+    const closeModel = () => {
         setOpen(false)
     }
     const getSize = (s) => {
@@ -54,6 +30,16 @@ const PreviewPage = () => {
     }
     const getColor = (s) => {
         setSelectedColor(s)
+    }
+    const addToBag = (product) => {
+        if (!product) {
+            return
+        }
+        addToCart(product, selectedSize, selectedColor)
+        setSelectedColor('White')
+        setSelectedSize('M')
+        dispatch(removeItem(product.id))
+        navigate('/cart')
     }
     return (
         <main className='mt-150'>
@@ -211,7 +197,7 @@ const PreviewPage = () => {
                                                                 </div>
                                                                 <div id={product.id}>
                                                                     <button
-                                                                        onClick={() => addToCart(product)}
+                                                                        onClick={() => addToBag(product)}
                                                                         className="mt-6 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                                                                     >
                                                                         Add to bag

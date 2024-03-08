@@ -1,37 +1,13 @@
 import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from '../api/product'
+import { v4 as uuidv4 } from 'uuid';
+
 
 
 const DataContext = createContext({})
 
-// const productDetails = {
-//     name: 'Basic Tee 6-Pack ',
-//     price: '₹ 192',
-//     rating: 3.9,
-//     reviewCount: 117,
-//     href: '#',
-//     imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-quick-preview-02-detail.jpg',
-//     imageAlt: 'Two each of gray, white, and black shirts arranged on table.',
-//     colors: [
-//       { name: 'White', class: 'bg-white', selectedClass: 'ring-gray-400' },
-//       { name: 'Gray', class: 'bg-gray-200', selectedClass: 'ring-gray-400' },
-//       { name: 'Black', class: 'bg-gray-900', selectedClass: 'ring-gray-900' },
-//     ],
-//     sizes: [
-//       { name: 'XXS', inStock: true },
-//       { name: 'XS', inStock: true },
-//       { name: 'S', inStock: true },
-//       { name: 'M', inStock: true },
-//       { name: 'L', inStock: true },
-//       { name: 'XL', inStock: true },
-//       { name: 'XXL', inStock: true },
-//       { name: 'XXXL', inStock: false },
-//     ],
-//   }
-
-  
-export const DataProvider = ({children}) => {
+export const DataProvider = ({ children }) => {
     const [products, setProducts] = useState([])
     const [categories, setCategories,] = useState([])
     const [isLoading, setIsLoading] = useState(true)
@@ -44,17 +20,40 @@ export const DataProvider = ({children}) => {
     const [items, setItems] = useState([])
 
     const handelNavigate = (e) => {
-      navigate('/cart')
+        navigate('/cart')
+    }
+    const addToCart = (product, size, color) => {
+        const existingItem = items.find(item => item.id === product.id && item.size === selectedSize && item.color === selectedColor)
+        if (existingItem) {
+            updateQuantity(existingItem.id, existingItem.color, 1)
+            setOpen(false)
+            return
+        }
+        const newItem = {
+            id: uuidv4(),
+            name: product.name,
+            price: product.price,
+            image: product.imageSrc,
+            size: selectedSize,
+            color: selectedColor,
+            quantity: 1
+        }
+        setItems([newItem, ...items])
+        setOpen(false)
+    }
+    // update quantity 
+    const updateQuantity = (itemId, colorId, amount) => {
+        setItems(items.map((item) => item.id === itemId && item.color === colorId ? { ...item, quantity: item.quantity + amount } : item).filter(item => item.quantity > 0))
     }
     
- return (
-    <DataContext.Provider value={{
-        products, isLoading, setIsLoading, handelNavigate,reqType, setreqType, categories, setCategories, open, setOpen, selectedColor,
-        setSelectedColor, selectedSize, setSelectedSize, setOpenSignIn, openSignin, items, setItems
-    }}>
-        {children}
-    </DataContext.Provider>
- )
+    return (
+        <DataContext.Provider value={{
+            products, isLoading, setIsLoading, handelNavigate, reqType, setreqType, categories, setCategories, open, setOpen, selectedColor,
+            setSelectedColor, selectedSize, setSelectedSize, setOpenSignIn, openSignin, items, setItems, addToCart, updateQuantity
+        }}>
+            {children}
+        </DataContext.Provider>
+    )
 }
 
 export default DataContext
